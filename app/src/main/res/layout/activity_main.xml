@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="info"
+            type="yunzhe.plugin.baseframe.bean.UserInfo" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="148dp"
+            android:layout_height="64dp"
+            android:background="#0f0"
+            android:text="@{info.name}"
+            android:textColor="@android:color/black"
+            android:textSize="32sp"
+            tools:text="name" />
+
+        <TextView
+            android:id="@+id/tvAge"
+            android:layout_width="148dp"
+            android:layout_height="64dp"
+            android:background="#ff0"
+            android:text="@{info.age}"
+            android:textColor="@android:color/black"
+            android:textSize="32sp"
+            tools:text="age" />
+    </LinearLayout>
+</layout>

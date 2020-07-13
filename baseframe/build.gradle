@@ -1,0 +1,39 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+
+    /*********************************框架部分Start*********************************/
+    //  序列化对象使用Serial、摒弃传统的Serializable 和 Parcelable，因为Serial性能各方面更为优越
+    implementation 'com.twitter.serial:serial:0.1.6'
+
+    //  ShareReference存储方面，使用微信MMKV，性能更为优越--记得在Application中初始化
+    implementation 'com.tencent:mmkv-static:1.2.1'
+
+    // 基础依赖包，必须要依赖-沉浸bar
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+
+
+    //  手术刀 饿了么
+//    debugImplementation 'me.ele:uetool:1.2.3'
+//    releaseImplementation 'me.ele:uetool-no-op:1.2.3'
+
+    /*********************************框架部分End***********************************/
+
+}
